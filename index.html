@@ -217,7 +217,14 @@
         </ul>
     </div>
     <!-- End #skills -->
-
+	
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+	function onSubmit(token) {
+		document.getElementById("demo-form").submit();
+	}
+</script>
+	
     <div id="contact">
         <h2>Ponte en contacto</h2>
         <div id="contact-form">
@@ -225,7 +232,10 @@
                 <input type="hidden" name="_subject" value="Solicitud de contacto desde el sitio web personal" />
                 <input type="email" name="_replyto" placeholder="Su correo electrónico" required>
                 <textarea name="message" placeholder="Su mensaje" required></textarea>
-                <button type="submit">Send</button>
+                <button class="g-recaptcha"
+			data-sitekey="reCAPTCHA_site_key"
+			data-callback='onSubmit'
+			data-action='submit'>Enviar</button>
             </form>
         </div>
         <!-- End #contact-form -->
